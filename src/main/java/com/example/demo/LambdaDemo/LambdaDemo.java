@@ -3,6 +3,7 @@ package com.example.demo.LambdaDemo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class LambdaDemo {
 
@@ -62,5 +63,27 @@ public class LambdaDemo {
         System.out.println("所有程序员的姓名:");
         javaProgrammers.forEach((p) -> System.out.printf("%s %s; ", p.getFirstName(), p.getLastName()));
         phpProgrammers.forEach((p) -> System.out.printf("%s %s; ", p.getFirstName(), p.getLastName()));
+
+
+        Integer[] values = {11,2,33,14,55,6,77,8,19};
+
+        List<Integer> valuesList = Arrays.asList(values);
+
+        valuesList.forEach(p -> System.out.println(p));
+
+        //排序
+        Arrays.parallelSort(values,values.length/2,values.length);
+
+        int[] sumValues = new int[100000];
+
+        for (int i=0;i<100000;i++){
+            sumValues[i]=i;
+        }
+
+
+        //流形式计算很长数组的值
+        long sum = IntStream.of(sumValues).parallel().sum();
+
+        System.out.println("sum="+sum);
     }
 }
