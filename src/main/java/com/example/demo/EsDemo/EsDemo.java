@@ -60,7 +60,7 @@ public class EsDemo {
             @RequestParam(name = "country") String country,
             @RequestParam(name = "age") int age,
             @RequestParam(name = "date")
-            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
             Date date
     ){
 

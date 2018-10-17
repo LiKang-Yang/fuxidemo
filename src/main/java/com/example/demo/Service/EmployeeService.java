@@ -33,4 +33,7 @@ public class EmployeeService {
         return employeeRepository.findAll(pageable);
     }
 
+    public void save(Employee employee){
+        employeeRepository.save(employee);
+    }
 }
