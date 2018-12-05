@@ -36,7 +36,7 @@ public class EmployeeRepositoryTest extends DemoApplicationTests {
     @Test
     public void testSave(){
         Employee employee = new Employee();
-        employee.setName("岳不群");
+        employee.setName("lisi");
         employee.setAge(45);
         employeeService.save(employee);
 
